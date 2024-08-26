@@ -1,6 +1,6 @@
 import Image, { ImageProps } from "next/image";
 
-const PromoBanner = (alt, props: ImageProps) => {
+const PromoBanner = ({ alt, ...props }: ImageProps) => {
   return (
     <Image
       height={0}
