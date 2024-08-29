@@ -1,3 +1,5 @@
+"use server";
+
 import { prismaClient } from "@/lib/prisma";
 import { CartProduct } from "@/providers/cart";
 import { User } from "@prisma/client";

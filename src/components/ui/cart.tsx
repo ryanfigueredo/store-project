@@ -14,13 +14,14 @@ import { useSession } from "next-auth/react";
 
 const Cart = () => {
   const { data } = useSession();
+
   const { products, subtotal, total, totalDiscount } = useContext(CartContext);
 
   const handleFinishPurchaseClick = async () => {
     if (!data?.user) {
       return;
     }
-    // await createOrder(products, data.user!);
+    await createOrder(products, (data?.user as any).id);
 
     const checkout = await createCheckout(products);
 
