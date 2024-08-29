@@ -5,7 +5,7 @@ import Stripe from "stripe";
 
 export const createCheckout = async (
   products: CartProduct[],
-  orderId: string = "1234",
+  orderId: string,
 ) => {
   const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
     apiVersion: "2024-06-20",
@@ -14,8 +14,8 @@ export const createCheckout = async (
   const checkout = await stripe.checkout.sessions.create({
     payment_method_types: ["card"],
     mode: "payment",
-    success_url: "http://localhost:3000",
-    cancel_url: "http://localhost:3000",
+    success_url: process.env.HOST_URL,
+    cancel_url: process.env.HOST_URL,
     metadata: {
       orderId,
     },

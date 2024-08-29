@@ -1,12 +1,13 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
   images: {
-    domains: ["shopimagesrc.s3.us-east-2.amazonaws.com"],
+    domains: ["utfs.io"],
   },
   experimental: {
     serverActions: true,
   },
 };
 
-export default nextConfig;
+// domains: ["shopimagesrc.s3.us-east-2.amazonaws.com"],
+
+module.exports = nextConfig;
